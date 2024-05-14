@@ -21,13 +21,13 @@ pont_vida = 10
 p1 = Player("imagens/Steven.png",50,50,300,400)
 p2 = Player("imagens/Garnet.png", 50,50,0,450)
 lista_obs = [Item("imagens/Jasper.png",50,50,0),
-             Item("imagens/Jasper.png",50,50,0),
-             Item("imagens/Jasper.png",50,50,0)]
-lista_col = [Item("imagens/Gem.png",50,50,0),
-             Item("imagens/Gem.png",50,50,0),
-             Item("imagens/Gem.png",50,50,0),
-             Item("imagens/Gem.png",50,50,0),
-             Item("imagens/Gem.png",50,50,0)]
+             Item("imagens/Peridot.png",50,50,0),
+             Item("imagens/Espinela.png",50,50,0)]
+lista_col = [Item("imagens/Ametista.png",50,50,0),
+             Item("imagens/Perola.png",50,50,0),
+             Item("imagens/Rubi.png",50,50,0),
+             Item("imagens/Safira.png",50,50,0),
+             Item("imagens/Rosa.png",50,50,0)]
 
 
 cont_poder = 3
