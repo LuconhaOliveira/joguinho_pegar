@@ -6,5 +6,17 @@ class Player:
         self.imagem = pygame.image.load(imagem)
         self.largura = largura
         self.altura = altura
+        self.imagem = pygame.transform.scale(self.imagem,(self.largura,self.altura))
         self.pos_x = pos_x
         self.pos_y = pos_y
+        
+    def aparecer(self,tela):
+        tela.blit(self.imagem,(self.pos_x, self.pos_y))
+
+    def andar(self,dir):
+        if dir == "r":
+            if self.pos_x>=0:
+                self.pos_x-=3
+        if dir == "l":
+            if self.pos_x<=800-self.largura:
+                self.pos_x+=3
