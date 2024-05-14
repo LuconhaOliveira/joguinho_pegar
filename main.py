@@ -8,13 +8,15 @@ pygame.display.set_caption("Lorem ipsum")
 
 clock = pygame.time.Clock()
 
-p1 = Player("imagens/Steven2.png",50,50,300,350)
+p1 = Player("imagens/Steven.png",50,50,300,350)
+obs1 = Item("imagens/Jasper.png",50,50,0)
 
 running = True
 while running:
     tela.fill((0,0,255))
     pygame.draw.rect(tela, (0,255,0),(0,400,800,100))
     p1.aparecer(tela)
+    obs1.aparecer(tela)
 
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
@@ -24,6 +26,7 @@ while running:
         p1.andar("l")
     if keys[pygame.K_d] or keys[pygame.K_LEFT]:
         p1.andar("r")
+    obs1.mover()
     
     
     
