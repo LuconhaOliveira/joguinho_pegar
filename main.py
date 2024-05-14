@@ -11,6 +11,12 @@ font = pygame.font.SysFont('Comic Sans MS', 45)
 game_over = font.render("GAME OVER",False,(255,255,255))
 font = pygame.font.SysFont('Comic Sans MS', 15)
 
+som_coleta = pygame.mixer.Sound("sons/bubble.mp3")
+
+#musica de fundo
+#pygame.mixer.music.load("som/musica_fundo.mp3")
+#pygame.mixer.music.set_endevent(pygame.USEREVENT)
+#pygame.mixer.music.play()
 
 clock = pygame.time.Clock()
 
@@ -75,6 +81,7 @@ while running:
             if p1.mask.overlap(col.mask,(col.pos_x-p1.pos_x,col.pos_y-p1.pos_y)):
                 pontos+=1
                 col.pos_y = 500
+                som_coleta.play()
 
         if keys[pygame.K_a] or keys[pygame.K_RIGHT]:
             p1.andar("l")
