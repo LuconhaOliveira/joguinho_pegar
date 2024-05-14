@@ -20,6 +20,8 @@ lista_obs = [Item("imagens/Jasper.png",50,50,0),
              Item("imagens/Jasper.png",50,50,0)]
 lista_col = [Item("imagens/Gem.png",50,50,0),
              Item("imagens/Gem.png",50,50,0),
+             Item("imagens/Gem.png",50,50,0),
+             Item("imagens/Gem.png",50,50,0),
              Item("imagens/Gem.png",50,50,0)]
 
 running = True
@@ -27,11 +29,14 @@ while running:
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             running = False
-    tela.fill((0,0,255))
-    pygame.draw.rect(tela, (0,255,0),(0,400,800,100))
+    fundo = pygame.image.load("imagens/Fundo.jpg")
+    fundo = pygame.transform.scale(fundo,(800,500))
+    tela.blit(fundo,(0,0))
     pontuacao = font.render(f"PONTUAÇÃO: {pontos}",False,(255,255,255))
     vida = font.render(f"VIDAS: {vidas}",False,(255,255,255))
     keys = pygame.key.get_pressed()
+    if keys[pygame.K_ESCAPE]:
+        running = False
     if vidas>0:
         tela.blit(pontuacao,(0,0))
         tela.blit(vida,(0,15))
