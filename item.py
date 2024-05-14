@@ -10,7 +10,7 @@ class Item:
         self.imagem = pygame.transform.scale(self.imagem,(self.largura,self.altura))
         self.pos_y = pos_y
         self.pos_x = random.randint(0,800-self.largura)
-        self.spd = random.randint(2,5)
+        self.spd = random.randint(3,8)
         self.mask = pygame.mask.from_surface(self.imagem)
         
 
