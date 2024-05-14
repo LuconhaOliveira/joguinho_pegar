@@ -9,8 +9,8 @@ class Item:
         self.altura = altura
         self.imagem = pygame.transform.scale(self.imagem,(self.largura,self.altura))
         self.pos_y = pos_y
-        self.pos_x = random.randint(0,800)
-        self.spd = random.randint(1,3)
+        self.pos_x = random.randint(0,800-self.largura)
+        self.spd = random.randint(2,5)
         self.mask = pygame.mask.from_surface(self.imagem)
         
 
@@ -19,7 +19,7 @@ class Item:
 
     def mover(self):
         self.pos_y+=self.spd
-        if self.pos_y == 500:
+        if self.pos_y >= 500:
             self.pos_x = random.randint(0,800)
             self.spd = random.randint(1,3)
-            self.pos_y = 0
+            self.pos_y = 0-self.altura
